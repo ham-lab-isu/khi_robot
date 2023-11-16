@@ -30,7 +30,7 @@ generate_messages(
 ###################################
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES khi_robot_msgs
+   LIBRARIES khi_robot_msgs
    CATKIN_DEPENDS message_runtime std_msgs
 #  DEPENDS system_lib
 )

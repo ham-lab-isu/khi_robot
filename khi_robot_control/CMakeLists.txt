@@ -21,6 +21,8 @@ catkin_package(
     khi_robot_msgs
     trajectory_msgs)
 
+catkin_python_setup()
+
 ###########
 ## Build ##
 ###########

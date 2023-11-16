@@ -1,6 +1,7 @@
 import rospy
 from std_srvs.srv import Trigger, TriggerRequest, TriggerResponse
 from khi_robot_msgs.srv import KhiRobotCmd, KhiRobotCmdRequest, KhiRobotCmdResponse
+from time import sleep
 
 
 class KHIRobotManager:
@@ -23,6 +24,9 @@ class KHIRobotManager:
         else:
             res.success = True
             res.message = 'Successfully enabled robot'
+
+        # Wait for a few seconds to let the controller respond
+        sleep(2.0)
 
         return res
 
