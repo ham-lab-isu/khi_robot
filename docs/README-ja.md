@@ -1,4 +1,4 @@
-khi_robot [![Build Status](https://travis-ci.com/Kawasaki-Robotics/khi_robot.svg?branch=master)](https://travis-ci.com/Kawasaki-Robotics/khi_robot)
+khi_robot [![Build Status](https://github.com/Kawasaki-Robotics/khi_robot/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Kawasaki-Robotics/khi_robot/actions/workflows/ci.yml)
 ===================================================================================================================================================
 
 このリポジトリではKHIのロボットのROSサポートパッケージを提供しています。  
@@ -52,6 +52,7 @@ roslaunch ***_moveit_config moveit_planning_execution.launch
  * rs007l
  * rs007n
  * rs013n
+ * rs020n
  * rs025n
  * rs80n
 

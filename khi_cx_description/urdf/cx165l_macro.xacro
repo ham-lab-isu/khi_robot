@@ -4,7 +4,6 @@
 
     <xacro:include filename="$(find khi_cx_description)/urdf/cx.transmission.xacro" />
     <xacro:include filename="$(find khi_cx_description)/urdf/common.gazebo.xacro" />
-    <xacro:include filename="$(find khi_cx_description)/urdf/isu_lab.xacro" />
 
     <!-- link rviz colors -->
     <material name="White">
@@ -56,7 +55,7 @@
     </xacro:macro>
 
     <joint name="${prefix}base_link_joint" type="fixed">
-        <parent link="base_plate" />
+        <parent link="world" />
         <child link="base_link" />
         <origin rpy="0 0 0" xyz="0 0 0" />
     </joint>
@@ -129,7 +128,7 @@
 
     <!-- Link 2 -->
     <joint name="${prefix}joint2" type="revolute">
-      <axis xyz="1 0 0" rpy="0 0 0" />
+      <axis xyz="-1 0 0" rpy="0 0 0" />
       <limit effort="1000.0" lower="${j2_lower_limit}" upper="${j2_upper_limit}" velocity="${j2_velocity_limit}"/>
       <origin xyz="0 0.3 0" rpy="0 0 0" />
       <parent link="${prefix}link1"/>
@@ -312,40 +311,5 @@
         <xacro:default_inertial mass="${j6_mass}"/>
     </link>
 
-    <!-- PushCorp Compliant Tool and Spindle -->
-
-    <joint name="${prefix}pushcorp" type="fixed">
-      <origin xyz="0 0.0949325000000025 0" rpy="0 1.5707963267949 0" />
-      <parent link="${prefix}link6"/>
-      <child link="${prefix}pushcorp"/>
-    </joint>
-
-    <link name="${prefix}pushcorp">
-        <visual>
-            <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
-            <geometry>
-                <mesh
-                filename="package://khi_cx_description/meshes/CX165L-PUSHCORP.STL" />
-            </geometry>
-            <material
-                name="">
-                <color
-                rgba="0.75294 0.75294 0.75294 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
-            <geometry>
-                <mesh
-                filename="package://khi_cx_description/meshes/CX165L-PUSHCORP-HULL.STL" />
-            </geometry>
-        </collision>
-        <xacro:default_inertial mass="${j6_mass}"/>
-    </link>
-  
   </xacro:macro>
 </robot>

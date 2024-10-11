@@ -25,6 +25,7 @@
   <node name="khi_robot_control" pkg="khi_robot_control"
         type="main" args="$(arg ip_args) $(arg viewer_args) $(arg period_args) $(arg robot_args)"
         respawn="false" output="screen" launch-prefix="$(arg launch_prefix)" cwd="node">
+        <remap from="joint_states" to="robot_joint_states"/>
   </node>
 
 </launch>
